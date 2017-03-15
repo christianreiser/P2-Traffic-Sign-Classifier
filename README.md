@@ -55,9 +55,9 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ![](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes2.png)
 Here is the first image of each class:
-![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes.png]
+![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes.png)
 Some signs are even for a human difficult to see.
-![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/9random.png]
+![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/9random.png)
 
 ###Design and Test a Model Architecture
 
@@ -67,7 +67,7 @@ The code for this step is contained in the 6. til 8. code cells of the IPython n
 
 I normalized the image data because its easier for the CNN to train with normalized data.
 Normalized image:
-![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/normal.png]
+![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/normal.png)
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
  
@@ -136,9 +136,9 @@ These are my five German traffic signs from the web:
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 There are five German traffic signs that I found on the web
-![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png]
+![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png)
 I also normalized the images:
-![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/norm5int.png]
+![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/norm5int.png)
 The second and third image might be difficult to classify because they are both similar looking speed limits.
 The model was not able to detect the new Stopp sign and I'm not sure why it is wrong with a certainty of 100%.
 The other images were easy to classify.
