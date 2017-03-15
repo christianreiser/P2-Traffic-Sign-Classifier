@@ -136,9 +136,13 @@ These are my five German traffic signs from the web:
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 There are five German traffic signs that I found on the web
+
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png)
+
 I also normalized the images:
+
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/norm5int.png)
+
 The second and third image might be difficult to classify because they are both similar looking speed limits.
 The model was not able to detect the new Stopp sign and I'm not sure why it is wrong with a certainty of 100%.
 The other images were easy to classify.
