@@ -51,9 +51,13 @@ signs data set:
 
 The code for this step is contained in the 3. until 5. code cells of the IPython notebook.  
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how some sings are even for a human difficult to see.
+Here is an exploratory visualization of the data set. It is a bar chart showing how some classes have lots of images while some classes just have a few.
 
-![alt text][image1]
+![][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes2.png]
+Here is the first image of each class:
+![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes.png]
+Some signs are even for a human difficult to see.
+![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/9random.png]
 
 ###Design and Test a Model Architecture
 
@@ -62,6 +66,8 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 The code for this step is contained in the 6. til 8. code cells of the IPython notebook.
 
 I normalized the image data because its easier for the CNN to train with normalized data.
+Normalized image:
+![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/normal.png]
 
 ####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
  
@@ -105,7 +111,8 @@ My final model consisted of the following layers:
 
 The code for training the model is located in the 10. cell of the ipython notebook. 
 
-To train the model, I used the Adam Optimizer
+To train the model, first used a batch size of 128. When optimizing my architecture I wasn't sure if thats a good size. I read in the internet, that a bigger batch size leads do a more acurate gradient, but my memory could be to small. Consequently, I increased my batch site and watched my memory. I found that I could increase the match size to more than 3000. However, the valiation accuracy droped. Later I read that when the batch size is too big, the gradient could be very accurate on the test images, but is not able to generalize as well. So I returned to a batch size of 128 again and also tried to lower it even more to 100. A size of 100 seemed to give the best results. However, lowering it even more could still be beneficial.
+At first I set the learning rate to 0.00001 with 200 epoches. But it was too time consuming and I couldn't iterate on my odel fast enough. So I lowerd the epoches to 15 and set the learning rate to 0.001. In the last 5 epoches it seems like the Network is not learning anymore, possibly 10 or 11 Epoches would work too. From the beginning I used the Adam Optimizer.
 
 ####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -124,10 +131,14 @@ My final model results were:
 ###Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+These are my five German traffic signs from the web:
+
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 There are five German traffic signs that I found on the web
-
+![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png]
+I also normalized the images:
+![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/norm5int.png]
 The second and third image might be difficult to classify because they are both similar looking speed limits.
 The model was not able to detect the new Stopp sign and I'm not sure why it is wrong with a certainty of 100%.
 The other images were easy to classify.
@@ -137,13 +148,23 @@ The code for making predictions on my final model is located in the tenth cell o
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
+| Image			        |     Prediction	       		| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| priority road -> 100% 									| 
-| speed limit 30     			| speed limit 30-> 57% 										|
-| speed limit 50 					| speed limit 50 -> 49 											|
-| roundabout mandatory      		| roundabout mandatory -> 100%   				 				|
-| Right of way at next intersection		| Right of way at next intersection -> 100%     							|
+| Stop Sign      		| priority road->100% 		| 
+| speed limit 30     			| speed limit 30->57%;speedlimit 50km/h with 40% |
+| speed limit 50 					| speed limit 50->49%; speedlimit 30km/h with 44% |
+| roundabout mandatory      		| roundabout mandatory -> 100%  	|
+| Right of way at next intersection		| Right of way at next intersection -> 100%  |
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. Thats less as in the test. Maybe because the images are uncut
+1. Right of way at next intersection: correct classification with a certainty of 100%
+2. Speedimit 50km/h: correct classification with a certainty of 49%, next guesses are speedlimit 30km/h with 44% and speedlimit 80km/h with 7%
+3. Speedimit 30km/h: correct classification with a certainty of 57%, next guesses are speedlimit 50km/h with 40% and speedlimit 50km/h with 2%
+4. Roundabout mandatory: correct classification with a certainty of 100%
+5. Stop: INCORRECT classification with a certainty of 100%. The stop sign is classified as a priority road.
+
+Interpretation:
+For the model Right of way at next intersection and Roundabout mandatory are very easy to distinguish.
+The the model is less certain about the speedlimits, nevertheless it classifies correctly.
+The incorrect prediction with a wrong certainty of 100% is very strange. At first I tought my labeling could be wrong. However I can't finde the mistake. Maybe its due to the uncut image in contrast to the cut training images.
