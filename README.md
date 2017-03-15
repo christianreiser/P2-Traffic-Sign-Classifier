@@ -53,7 +53,7 @@ The code for this step is contained in the 3. until 5. code cells of the IPython
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how some classes have lots of images while some classes just have a few.
 
-![][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes2.png]
+![](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes2.png)
 Here is the first image of each class:
 ![alt text][https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/classes.png]
 Some signs are even for a human difficult to see.
