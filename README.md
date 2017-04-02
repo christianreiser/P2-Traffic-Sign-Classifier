@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition** 
+**Traffic Sign Recognition** 
 **Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
@@ -21,17 +21,15 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
----
-###Writeup / README
 
-####1. The submission includes the project code and here is a link to my [project code](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier%20v1.ipynb)
 
-###Data Set Summary & Exploration
 
-####1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. The submission includes the project code and here is a link to my [project code](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier%20v1.ipynb)
+
+### Data Set Summary & Exploration
+
+#### 1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
 The code for this step is contained in the second code cell of the IPython notebook.  
 
@@ -45,7 +43,7 @@ signs data set:
 * The number of unique classes/labels in the data set is 43
 
 
-####2. Exploratory visualization of the dataset.
+#### 2. Exploratory visualization of the dataset.
 
 The code for this step is contained in the 3. until 5. code cells of the IPython notebook.  
 
@@ -59,7 +57,7 @@ Some signs are even for a human difficult to see.
 
 ###Design and Test a Model Architecture
 
-####3. 
+#### 3. 
 I normalized the image data because its easier for the CNN to train with normalized data.
 
 The code for this step is contained in the 6. til 8. code cells of the IPython notebook.
@@ -68,14 +66,14 @@ Normalized image:
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/normal.png)
 More preprocessing was not necessary due to the great dataset.
 
-####4. 
+#### 4. 
 
 The data set was already split into a validation, training and testset.
 My final training set had 34799 number of images. My validation had 4410 images set and the test set  and 12630 images.
 It would be possible to generated additional data for training. For example we could shift images a little to the top. But in this case I didn't generate additional training data.
 
 
-####5. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 5. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 The code for my final model is located in the 9. cell of the ipython notebook. 
 
@@ -105,7 +103,7 @@ My final model consisted of the following layers:
  
 
 
-####6. training the model and the approach taken for finding a solution
+#### 6. training the model and the approach taken for finding a solution
 
 The code for training the model is located in the 10. cell of the ipython notebook. 
 
@@ -132,15 +130,15 @@ My final model results were:
 * I think the CNN was a great choice, because the images are not always in the same place.
 
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. 
+#### 1. 
 These are my five German traffic signs from the web:
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png)
 They all seem very vivid, not dark at all, also the angle and contrast are good, . On the downside I didn't crop them. Especially the Stopsign is shifted to the top. I'm note sure how the different background will affect the classification.
 
 
-####2. Preprocessing and Predictions:
+#### 2. Preprocessing and Predictions:
 At first I also normalized the images:
 
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/norm5int.png)
