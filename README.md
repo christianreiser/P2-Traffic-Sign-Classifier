@@ -59,7 +59,7 @@ Some signs are even for a human difficult to see.
 ###Design and Test a Model Architecture
 
 #### 3. 
-I normalized the image data because its easier for the CNN to train with normalized data.
+I normalized the image data because it's easier for the CNN to train with normalized data.
 
 The code for this step is contained in the 6. til 8. code cells of the IPython notebook.
 
@@ -69,9 +69,9 @@ More preprocessing was not necessary due to the great dataset.
 
 #### 4. 
 
-The data set was already split into a validation, training and testset.
+The data set was already split into a validation, training, and test set.
 My final training set had 34799 number of images. My validation had 4410 images set and the test set  and 12630 images.
-It would be possible to generated additional data for training. For example we could shift images a little to the top. But in this case I didn't generate additional training data.
+It would be possible to generate additional data for training. For example, we could shift images a little to the top. But in this case, I didn't generate additional training data.
 
 
 #### 5. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -162,10 +162,10 @@ Here are the results of the prediction:
 | Right of way at next intersection		| Right of way at next intersection -> 100%  |
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. Thats less as in the test.However I just tested 5 images, consequently 80% does not have significance. 
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. That's less as in the test.However I just tested 5 images, consequently, 80% does not have significance. 
 1. Right of way at next intersection: correct classification with a certainty of 100%
-2. Speedimit 50km/h: correct classification with a certainty of 49%, next guesses are speedlimit 30km/h with 44% and speedlimit 80km/h with 7%
-3. Speedimit 30km/h: correct classification with a certainty of 57%, next guesses are speedlimit 50km/h with 40% and speedlimit 50km/h with 2%
+2. Speed limit 50km/h: correct classification with a certainty of 49%, next guesses are speed limit 30km/h with 44% and speed limit 80km/h with 7%
+3. Speed limit 30km/h: correct classification with a certainty of 57%, next guesses are speed limit 50km/h with 40% and speed limit 50km/h with 2%
 4. Roundabout mandatory: correct classification with a certainty of 100%
 5. Stop: INCORRECT classification with a certainty of 100%. The stop sign is classified as a priority road.
 
