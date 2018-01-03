@@ -110,12 +110,12 @@ The code for training the model is located in the 10. cell of the ipython notebo
 
 To train the model, first used a batch size of 128. When optimizing my architecture I wasn't sure if thats a good size. I read in the internet, that a bigger batch size leads do a more acurate gradient, but my memory could be to small. Consequently, I increased my batch site and watched my memory. I found that I could increase the match size to more than 3000. However, the valiation accuracy droped. Later I read that when the batch size is too big, the gradient could be very accurate on the test images, but is not able to generalize as well. So I returned to a batch size of 128 again and also tried to lower it even more to 100. A size of 100 seemed to give the best results. However, lowering it even more could still be beneficial.
 
-At first I set the learning rate to 0.00001 with 200 epoches. But it was too time consuming and I couldn't iterate on my odel fast enough, because it took 3 hours to train. So I lowerd the epoches to 15 and set the learning rate to 0.001. In the last 5 epoches it seems like the Network is not learning anymore, possibly 10 or 11 Epoches would work too. From the beginning I used the Adam Optimizer, because it's storing an exponentially decaying average of past squared gradients and keeps an exponentially decaying average of past gradients, similar to momentum.
+At first I set the learning rate to 0.00001 with 200 epoches. But it was too time consuming and I couldn't iterate on my odel fast enough, because it took 3 hours to train. So I lowerd the epoches to 15 and set the learning rate to 0.001. In the last 5 epoches it seems like the Network is not learning anymore, possibly 10 or 11 Epoches would work too. From the beginning I used the Adam Optimizer, because it's straightforward to implement, computationally efficient, has little memory requirements and is well suited for problems that are large in terms of data and/or parameters. Additionalle Hyper-parameters should have intuitive interpretation and typically require little tuning.
 
 Dropout: Initially I didn't use dropout because LeNet was working without dropout and I wanted to get a minimum viable model as fast as possible. Nevertheless, my validation accuracy stagnated and I think the reason was overfitting. So I implemented dropout and tried different values. A rate of 0.75 seemed do lead to the best results.
 
 
-My approach was inspired by the LeNet. The first layers are convolutions and maxpoolings in order to keep the number of weights low and avoid averfitting. When the image is merged spatially to a small size I implemented fully-connected layers
+My approach was inspired by the LeNet. The first layers are convolutions and maxpoolings in order to keep the number of weights low and avoid averfitting. When the image is merged spatially to a small size I implemented fully-connected layers.
 
 For activation I used the ReLUs because of sparsity and a reduced likelihood of vanishing gradient.
 
@@ -133,9 +133,9 @@ My final model results were:
 
 ### Test a Model on New Images
 
-#### 1. 
-These are my five German traffic signs from the web:
+#### 1. These are my five German traffic signs from the web:
 ![alt text](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Images/5int.png)
+
 They all seem very vivid, not dark at all, also the angle and contrast are good, . On the downside I didn't crop them. Especially the Stopsign is shifted to the top. I'm note sure how the different background will affect the classification.
 
 
