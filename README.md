@@ -26,7 +26,7 @@ The goals / steps of this project are the following:
 
 
 
-#### 1. The submission includes the project code and here is a link to my [project code](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier%20v1.ipynb)
+#### 1. The submission includes the project code and here is a link to my [project code](https://github.com/christianreiser/P2-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
